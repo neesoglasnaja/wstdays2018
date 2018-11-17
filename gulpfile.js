@@ -33,11 +33,7 @@ gulp.task('default', function() {
             baseDir: config.dist
         }
     });
-    gulp.watch(config.jade, function(event) {
-        gulp.run('jade');
-    });
-    gulp.watch(config.stylus, function(event) {
-        gulp.run('stylus');
-    });
+    gulp.watch(config.jade, gulp.series('jade'));
+    gulp.watch(config.stylus, gulp.series('stylus'));
     gulp.watch(config.html).on('change', browserSync.reload);
 });
