@@ -57,13 +57,13 @@ html(lang='ru')
         li Редактор кода
       p.bold.next +
       ul
-        li.next "Умная" работа с синтаксисом
+        li.next «Умная» работа с синтаксисом
         li.next Средства автоматизации
         li.next Отладчик
       +cover('pictures/ide-bg.jpg')
     +slide({header: "", classes: "white center"})
       img(src="pictures/warning.png", width="150px")
-      p Я допускаю некоторую небрежность в именовании, называя "текстовый редактор", "редактор кода", "редактор исходного кода" и "IDE" общим словом "редактор"
+      p Я допускаю некоторую небрежность в именовании, называя «текстовый редактор», «редактор кода», «редактор исходного кода» и «IDE» общим словом «редактор»
       +cover('pictures/blur-cover.jpg')
     +slide({header: "Технологии фронтенда", classes: "label-header"})
       img.next(src="pictures/logos/html-css-js.png" width="100%")
@@ -79,9 +79,10 @@ html(lang='ru')
     +slide({header: "Эксперимент", classes: "label-header white"})
       ul
         li.next 4 редактора
+        li.next Использование «в бою» минимум неделю
         li.next Разные по величине и технологиям проекты
         li.next Сравнить возможности
-        li.next "Синтетические" тесты производительности
+        li.next «Синтетические» тесты производительности
       +cover('pictures/experiment-bg.jpg')
     +slide({header: "", classes: "label-header"})
       table.compare-table
@@ -108,8 +109,8 @@ html(lang='ru')
           tr.next
             td Очень редко
             td ~1-3/мес
-            td Ежемесячно
-            td ~1/мес
+            td ~3/мес
+            td ~1.5/мес
           tr.next
             td Python
             td Electron
@@ -133,15 +134,12 @@ html(lang='ru')
     +slide({header: "Что общего", classes: "label-header white"})
       ul
         li.next Мультиплатформенность
-        li.next Поддерживают HTML/CSS/JS "из коробки"
+        li.next Поддерживают HTML/CSS/JS «из коробки»
         li.next Имеют системы плагинов
         li.next Хорошо кастомизируются:
           br
           | горячие клавиши, внешний вид, настройки
       +cover('pictures/common-bg.jpg')
-    +slide({header: "", classes: "label-header white"})
-      a.bottom(href="https://stackoverflow.com/a/11828573") Как выйти из Vim
-      +cover('pictures/vim-bg.jpg')
     +slide({header: "Отброчный тур: все против всех", shout: true, classes: "capture label-header"})
       +cover('pictures/battle-bg.jpg')
     +slide({header: "Sublime Text 3", classes: "label-header"})
@@ -150,7 +148,7 @@ html(lang='ru')
         li.next Действительно легкий и быстрый
         li.next Отлично подойдет для небольших базовых проектов
       ul.minus
-        li.next Всего лишь "блокнот"
+        li.next Всего лишь «блокнот»
         li.next Нет встроенного менеджера пакетов
         li.next Условно-бесплатный
       img.logo-img(src="pictures/logos/sublime-text.png", width="150px")
@@ -181,11 +179,13 @@ html(lang='ru')
         li.next По ощущениям более производительный, чем Atom
       ul.minus
         li.next Многие функции только через плагины
-        li.next Все еще есть баги
+        li.next
+          span Все еще есть баги 
+          span.next &#8594; Очень много фиксов к каждом релизе
       img.logo-img(src="pictures/logos/vs-code.png", width="150px")
     +slide({header: "WebStorm", classes: "label-header"})
       ul.plus
-        li.next Может (почти) все "из коробки"
+        li.next Может (почти) все «из коробки»
         li.next А что не может, есть еще доп. плагины
         li.next Быстрый производительный поиск по большим проектам
       ul.minus
@@ -211,25 +211,29 @@ html(lang='ru')
               span  WebStorm
         tbody
           tr
+            th Первый запуск
+            td.green ~15s
+            td ~40s
+          tr
             th Базовый проект
-            td.green ~4s
-            td ~12s
+            td.green ~15s
+            td ~40s
           tr
-            th C зависимостями (~1000 файлов)
-            td.green ~6s
-            td ~15s
+            th C зависимостями (~6000 файлов)
+            td.green ~10s / ~8s
+            td ~60s / ~40s
           tr
-            th Мультиязычный (~6500 файлов)
-            td.green ~8s
-            td ~16s
+            th Мультиязычный (~22 000 файлов)
+            td.green ~5s
+            td ~7min / ~45s
           tr
             th Поиск
-            td ~3s
-            td.green ~2s
+            td ~10s
+            td.green ~0s
           tr
             th Открытие файла извне
-            td.green ~3s
-            td ~12s
+            td.green ~6s
+            td ~40s
           tr.next
             th 
             th +
@@ -323,7 +327,7 @@ html(lang='ru')
             td.green +
           tr
             th Stylus
-            td.green +
+            td -
             td.green +
           tr
             th Форматирование
@@ -485,7 +489,7 @@ html(lang='ru')
           tr
             th Live Share
             td.green +
-            td -
+            td Есть плагин
           tr.next
             th 
             th ++++++
@@ -509,13 +513,17 @@ html(lang='ru')
             td.green +
           tr
             th Diff
-            td Есть плагин
+            td.green +
+            td.green +
+          tr
+            th Проверка Git в системе
+            td.green +
             td.green +
           tr.next
             th 
-            th ++++++
+            th +++++++
             th ++++++++
-      //- p 27 / 26  + 1 / 2 = 28 / 28
+      //- p 28 / 26  + 1 / 2 = 29 / 28
     +slide({header: "Разное", classes: "label-header"})
       table
         thead
@@ -550,11 +558,11 @@ html(lang='ru')
             td -
           tr.next
             th 
-            th +++++++ 
-              span.next / 7
             th ++++++++ 
               span.next / 8
-      //- p 28 / 28  + 3 / 2 = 31 / 30
+            th ++++++++ 
+              span.next / 8
+      //- p 29 / 28  + 3 / 2 = 32 / 30
     +slide({header: "", classes: "label-header"})
       img.logo-img.winner(src="pictures/logos/webstorm.png", width="200px")
       +cover('pictures/change-bg.jpg')
@@ -580,8 +588,8 @@ html(lang='ru')
               br
               | ++++++++++
               br 
-              | + 
-              span.next / 31
+              | ++ 
+              span.next / 32
             th ++++++++++
               br
               | ++++++++++
@@ -594,6 +602,16 @@ html(lang='ru')
     +slide({header: "", classes: "label-header"})
       img.logo-img.winner(src="pictures/logos/vs-code.png", width="180px")
       +cover('pictures/change-bg.jpg')      
+    +slide({header: "Редакторы кода в браузере", shout: true, classes: "capture top-center label-header"})
+      +cover('pictures/online.jpg')
+    +slide({ classes: "label-header white"})
+      +cover('pictures/online-options.jpg')
+      img.next(src="pictures/logos/codepen.png", style="width: 200px; position: absolute; top: 50px; left: 250px")
+      img.next(src="pictures/logos/jsfiddle.png", style="width: 200px; position: absolute; top: 200px; left: 400px")
+      img.next(src="pictures/logos/jsbin.png", style="width: 200px; position: absolute; top: 400px; left: 550px")
+    +slide({header: "", classes: "label-header white"})
+      a.bottom(href="https://stackoverflow.com/a/11828573") Как выйти из Vim
+      +cover('pictures/vim-bg.jpg')
     +slide({header: "Выводы", classes: "label-header white"})
       ul
         li.next Каждый из редакторов хорош для своих задач
@@ -621,7 +639,7 @@ html(lang='ru')
           a(href="https://www.jetbrains.com/webstorm/") WebStorm
     +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
       p.end-link
-        a.bigger(href="http://bit.ly/fc2018-editors" target="_blank") bit.ly/fc2018-editors
+        a.bigger(href="http://bit.ly/wsd-editors" target="_blank") bit.ly/wsd-editors
         br
         | Александра Шинкевич (
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja

@@ -4,4 +4,8 @@ mixin frame(src)
             .btn.close
             .btn.hide
             .btn.expand
-        iframe(src=src, width="100%", height="350")
+        if src
+            iframe(src=src, width="100%", height="350")
+        if block
+            .frame-body
+                block
