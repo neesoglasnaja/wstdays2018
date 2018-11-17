@@ -1,0 +1,18 @@
+{
+    "name": "editors-wars",
+    "version": "1.0.0",
+    "description": "Presentation slides",
+    "author": "Aleksandra Shinkevich",
+    "homepage": "https://github.com/neesoglasnaja/editors-wars",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/neesoglasnaja/editors-wars.git"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.3",
+        "gulp": "^4.0.0",
+        "gulp-jade": "^1.1.0",
+        "gulp-stylus": "^2.3.0",
+        "gulp-watch": "^5.0.1"
+    }
+}

@@ -1,0 +1,632 @@
+include ./blocks/slide.jade
+include ./blocks/cover.jade
+include ./blocks/quote.jade
+include ./blocks/frame.jade
+
+- var title = "Война текстовых редакторов: редактор кода vs IDE"
+
+doctype html
+html(lang='ru')
+  head
+    title !{title}
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x10.css')
+    link(rel='stylesheet', href='theme.css')
+    link(rel='stylesheet', href='slides.css')
+  body.shower.list
+    header.caption
+      h1 !{title}
+    +slide({name: 'cover', header: title, classes:'cover'})
+      p Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/cover.jpg')
+    +slide({header: "Кто я?", classes: "label-header white"})
+      ul
+        li Глава отдела фронтенда, LOVATA
+        li Full-stack Node.js разработчик
+        li.next Пользователь Sublime Text 6+ лет
+      p
+        img.logo(src="pictures/minskcss.png")
+        img.logo(src="pictures/minskjs.png")
+        img.logo.css-m-js(src="pictures/css-minsk-js.svg")
+      +cover('pictures/about-cover.jpg')
+    +slide({header: "", classes: "white center"})
+      img(src="pictures/warning.png", width="150px")
+      p Оценки, приведенные в докладе, во многом субъективны.
+      p Автор работает с определенным набором технологий, и обращает внимание на моменты, которые могуть быть незначительны для кого-то другого
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "", classes: "white center"})
+      img(src="pictures/warning.png", width="150px")
+      p Данный доклад не охватывает особенности программирования в языках, которые не относятся ко фронтенду 
+        span.next (почти)
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "Редактор кода", classes: "label-header white"})
+      ul
+        li.next Редактирование кода
+        li.next Подсветка синтаксиса
+        li.next Проверка синтаксиса
+        li.next Форматирование
+        li.next Автодополнение
+        li.next Контекстная помощь по коду
+      +cover('pictures/text-editor-bg.jpg')
+    +slide({header: "IDE", classes: "label-header right white"})
+      ul.next 
+        li Редактор кода
+      p.bold.next +
+      ul
+        li.next "Умная" работа с синтаксисом
+        li.next Средства автоматизации
+        li.next Отладчик
+      +cover('pictures/ide-bg.jpg')
+    +slide({header: "", classes: "white center"})
+      img(src="pictures/warning.png", width="150px")
+      p Я допускаю некоторую небрежность в именовании, называя "текстовый редактор", "редактор кода", "редактор исходного кода" и "IDE" общим словом "редактор"
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "Технологии фронтенда", classes: "label-header"})
+      img.next(src="pictures/logos/html-css-js.png" width="100%")
+      p.next.center
+        span.bold НЕТ
+        br
+        span.next (или да, если вы живете в 2008)
+    +slide({header: "", classes: "label-header-"})
+      +cover('pictures/tech-stack.jpg')
+      img.next.logo-img.php(src="pictures/logos/php.png", width="235px")
+      img.next.logo-img.sublime-full(src="pictures/logos/sublime-text-full.png", width="100%")
+      img.next.logo-img(src="pictures/confused.gif")
+    +slide({header: "Эксперимент", classes: "label-header white"})
+      ul
+        li.next 4 редактора
+        li.next Разные по величине и технологиям проекты
+        li.next Сравнить возможности
+        li.next "Синтетические" тесты производительности
+      +cover('pictures/experiment-bg.jpg')
+    +slide({header: "", classes: "label-header"})
+      table.compare-table
+        thead
+          tr
+            th
+              img(src="pictures/logos/sublime-text.png", width="100px")
+              div Sublime Text
+            th.next 
+              img(src="pictures/logos/atom.png", width="100px") 
+              div Atom
+            th.next 
+              img(src="pictures/logos/vs-code.png", width="100px")
+              div VS Code
+            th.next 
+              img(src="pictures/logos/webstorm.png", width="100px") 
+              div WebStorm
+        tbody
+          tr.next
+            td 2008
+            td 2014
+            td 2015
+            td 2010
+          tr.next
+            td Очень редко
+            td ~1-3/мес
+            td Ежемесячно
+            td ~1/мес
+          tr.next
+            td Python
+            td Electron
+            td Electron
+            td Java
+          tr.next
+            td Английский
+            td Английский
+            td Мультиязычный
+            td Английский
+          tr.next
+            td Proprietary
+            td Open Source
+            td Open Source
+            td Proprietary
+          tr.next
+            td Условно-бесплатный
+            td Бесплатный
+            td Бесплатный
+            td Платный
+    +slide({header: "Что общего", classes: "label-header white"})
+      ul
+        li.next Мультиплатформенность
+        li.next Поддерживают HTML/CSS/JS "из коробки"
+        li.next Имеют системы плагинов
+        li.next Хорошо кастомизируются:
+          br
+          | горячие клавиши, внешний вид, настройки
+      +cover('pictures/common-bg.jpg')
+    +slide({header: "", classes: "label-header white"})
+      a.bottom(href="https://stackoverflow.com/a/11828573") Как выйти из Vim
+      +cover('pictures/vim-bg.jpg')
+    +slide({header: "Отброчный тур: все против всех", shout: true, classes: "capture label-header"})
+      +cover('pictures/battle-bg.jpg')
+    +slide({header: "Sublime Text 3", classes: "label-header"})
+      ul.plus
+        li.next Начать работу очень просто
+        li.next Действительно легкий и быстрый
+        li.next Отлично подойдет для небольших базовых проектов
+      ul.minus
+        li.next Всего лишь "блокнот"
+        li.next Нет встроенного менеджера пакетов
+        li.next Условно-бесплатный
+      img.logo-img(src="pictures/logos/sublime-text.png", width="150px")
+    +slide({header: "Atom<br>==<br>Sublime&nbsp;Text&nbsp;3", shout: true, classes: "label-header-"})
+      +cover('pictures/equals-bg.jpg')
+    +slide({header: "Atom", classes: "label-header"})
+      ul.plus.gray
+        li Начать работу очень просто
+        li Действительно легкий и быстрый
+        li Отлично подойдет для небольших базовых проектов
+      ul.minus
+        li.gray Всего лишь блокнот
+        li
+          span.gray Нет встроенного менеджера пакетов 
+          span.next &#8594; Есть
+        li
+          span.gray Условно-бесплатный 
+          span.next &#8594; Бесплатный
+        li.next Проблемы с производительностью
+      img.logo-img(src="pictures/logos/atom.png", width="150px")
+    +slide({header: "Visual Studio Code", classes: "label-header"})
+      ul.plus
+        li.next Подойдет под проекты практически любой сложности;
+          br 
+          | для некоторых технологий есть много встроенных бонусов
+        li.next Встроенная отладка Node.js, терминал и git
+        li.next Поддержка IteliSence
+        li.next По ощущениям более производительный, чем Atom
+      ul.minus
+        li.next Многие функции только через плагины
+        li.next Все еще есть баги
+      img.logo-img(src="pictures/logos/vs-code.png", width="150px")
+    +slide({header: "WebStorm", classes: "label-header"})
+      ul.plus
+        li.next Может (почти) все "из коробки"
+        li.next А что не может, есть еще доп. плагины
+        li.next Быстрый производительный поиск по большим проектам
+      ul.minus
+        li.next Интерфейс кажется слишком сложным
+        li.next Для простых проектов кажется overhead
+        li.next Проблемы производительности на не очень мощных компьютерах
+        li.next Цена
+      img.logo-img(src="pictures/logos/webstorm.png", width="150px") 
+    +slide({header: "", shout: true})
+      +cover('pictures/go-to-ide-bg.jpg')
+    +slide({header: "Visual Studio Code <span class='smallest'>vs</span> WebStorm", shout: true, classes: "capture label-header"})
+      +cover('pictures/versus-bg.jpg')
+    +slide({header: "Запуск и производительность", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Базовый проект
+            td.green ~4s
+            td ~12s
+          tr
+            th C зависимостями (~1000 файлов)
+            td.green ~6s
+            td ~15s
+          tr
+            th Мультиязычный (~6500 файлов)
+            td.green ~8s
+            td ~16s
+          tr
+            th Поиск
+            td ~3s
+            td.green ~2s
+          tr
+            th Открытие файла извне
+            td.green ~3s
+            td ~12s
+          tr.next
+            th 
+            th +
+            th
+      //- p 4 / 1
+    +slide({header: "Базовый проект", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th HTML
+            td.green +
+            td.green +
+          tr
+            th CSS
+            td.green +
+            td.green +
+          tr
+            th JS
+            td.green +
+            td.green +
+          tr
+            th Emmet
+            td.green +
+            td нет HTML
+          tr
+            th Formatter
+            td нет CSS
+            td.green +
+          tr.next
+            th 
+            th ++
+            th +
+      //- p 4 / 1 + 4 / 4 = 8 / 5
+    +slide({header: "Разметка", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Pug/Jade
+            td.green +
+            td.green +
+          tr
+            th Pug/Jade автокомплит
+            td.green +
+            td -
+          tr
+            th Markdown синтаксис
+            td.green +
+            td Просит плагин
+          tr.next
+            th 
+            th +++
+            th +
+      //- p 8 / 5  + 3 / 1 = 11 / 6
+    +slide({header: "Препроцессоры", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th SASS
+            td.green +
+            td.green +
+          tr
+            th Less
+            td.green +
+            td.green +
+          tr
+            th Stylus
+            td.green +
+            td.green +
+          tr
+            th Форматирование
+            td -
+            td.green +
+          tr.next
+            th 
+            th +++
+            th ++
+      //- p 11 / 6  + 3 / 4 = 14 / 9
+    +slide({header: "Angular", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Angular (TypeScript)
+            td.green +
+            td.green +
+          tr
+            th Автоимпорт
+            td.green +
+            td.green +
+          tr
+            th Переход по компонентам
+            td.green +
+            td.green +
+          tr.next
+            th 
+            th ++++
+            th +++
+      //- p 14 / 9  + 3 / 3 = 17 / 12
+    +slide({header: "React", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th JSX
+            td.green +
+            td.green +
+          tr
+            th Автоимпорт
+            td.green +
+            td.green +
+          tr
+            th Переход по компонентам
+            td.green +
+            td.green +
+          tr.next
+            th 
+            th +++++
+            th ++++
+      //- p 17 / 12  + 3 / 3 = 20 / 15
+    +slide({header: "Vue", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th .vue
+            td Просит плагин
+            td.green +
+          tr
+            th Автоимпорт
+            td.green +
+            td.green +
+          tr
+            th Переход по компонентам
+            td.green +
+            td.green +
+          tr.next
+            th 
+            th +++++
+            th +++++
+      //- p 20 / 15  + 2 / 3 = 22 / 18
+    +slide({header: "Линтинг", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Stylelint
+            td Есть плагин
+            td.green +
+          tr
+            th ESLint
+            td Есть плагин
+            td.green +
+          tr
+            th TSLint
+            td Есть плагин
+            td.green +
+          tr
+            th .editorconfig
+            td.green +
+            td.green +
+          tr.next
+            th 
+            th +++++
+            th ++++++
+      //- p 22 / 18  + 1 / 4 = 23 / 22
+    +slide({header: "Терминал, таски, дебаггинг", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Интеграция с консолью
+            td.green +
+            td.green +
+          tr
+            th Просит установить зависимости
+            td -
+            td.green +
+          tr
+            th Таск-раннер
+            td.green +
+            td.green +
+          tr
+            th Инструменты для дебага
+            td.green +
+            td.green +
+          tr
+            th Live Share
+            td.green +
+            td -
+          tr.next
+            th 
+            th ++++++
+            th +++++++
+      //- p 23 / 22  + 4 / 4 = 27 / 26
+    +slide({header: "Git", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Базовая интеграция
+            td.green +
+            td.green +
+          tr
+            th Diff
+            td Есть плагин
+            td.green +
+          tr.next
+            th 
+            th ++++++
+            th ++++++++
+      //- p 27 / 26  + 1 / 2 = 28 / 28
+    +slide({header: "Разное", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Цена
+            td.green +
+            td -
+          tr
+            th Работа редактора без багов
+            td -
+            td.green +
+          tr
+            th Правописание
+            td Есть плагин
+            td.green +
+          tr
+            th Простота интерфейса
+            td.green +
+            td -
+          tr
+            th Частота обновления
+            td.green +
+            td -
+          tr.next
+            th 
+            th +++++++ 
+              span.next / 7
+            th ++++++++ 
+              span.next / 8
+      //- p 28 / 28  + 3 / 2 = 31 / 30
+    +slide({header: "", classes: "label-header"})
+      img.logo-img.winner(src="pictures/logos/webstorm.png", width="200px")
+      +cover('pictures/change-bg.jpg')
+    +slide({header: "А если по-другому считать?", classes: "label-header"})
+      table
+        thead
+          tr
+            th.condition 
+            th.editor 
+              img.table-logo(src="pictures/logos/vs-code.png", width="32px") 
+              span  VS Code
+            th.editor2
+              img.table-logo(src="pictures/logos/webstorm.png", width="32px") 
+              span  WebStorm
+        tbody
+          tr
+            th Абсолютные значения
+            th ++++++++++
+              br
+              | ++++++++++
+              br
+              | ++++++++++
+              br
+              | ++++++++++
+              br 
+              | + 
+              span.next / 31
+            th ++++++++++
+              br
+              | ++++++++++
+              br
+              | ++++++++++
+              br
+              | ++++++++++ 
+              br
+              span.next / 30
+    +slide({header: "", classes: "label-header"})
+      img.logo-img.winner(src="pictures/logos/vs-code.png", width="180px")
+      +cover('pictures/change-bg.jpg')      
+    +slide({header: "Выводы", classes: "label-header white"})
+      ul
+        li.next Каждый из редакторов хорош для своих задач
+        li.next Для написания HTML/CSS/JS не должен быть нужен
+          br
+          | ни один из современных редакторов кода
+        li.next Отбросьте предрассудки в выборе инструментов
+        li.next Не бойтесь пробовать новое и искать лучшее
+      +cover('pictures/end-bg.jpg')      
+    +slide({header: "Ссылки на тему", classes: "label-header"})
+      ul 
+        li
+          a(href="https://ru.wikipedia.org/wiki/Текстовый_редактор") Текстовый редактор
+          |  (wiki)
+        li
+          a(href="https://ru.wikipedia.org/wiki/Интегрированная_среда_разработки") IDE
+          |  (wiki)
+        li
+          a(href="https://www.sublimetext.com/") Siblime Text
+        li
+          a(href="https://atom.io/") Atom
+        li
+          a(href="https://code.visualstudio.com/") Visual Studio Code
+        li
+          a(href="https://www.jetbrains.com/webstorm/") WebStorm
+    +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
+      p.end-link
+        a.bigger(href="http://bit.ly/fc2018-editors" target="_blank") bit.ly/fc2018-editors
+        br
+        | Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/blur-cover.jpg')
+
+    .progress
+    script(src='shower/shower.min.js')
