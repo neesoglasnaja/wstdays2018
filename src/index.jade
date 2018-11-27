@@ -12,7 +12,7 @@ html(lang='ru')
     meta(charset='utf-8')
     meta(http-equiv='x-ua-compatible', content='ie=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x10.css')
+    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x9.css')
     link(rel='stylesheet', href='theme.css')
     link(rel='stylesheet', href='slides.css')
   body.shower.list
@@ -66,7 +66,7 @@ html(lang='ru')
       p Я допускаю некоторую небрежность в именовании, называя «текстовый редактор», «редактор кода», «редактор исходного кода» и «IDE» общим словом «редактор»
       +cover('pictures/blur-cover.jpg')
     +slide({header: "Технологии фронтенда", classes: "label-header"})
-      img.next(src="pictures/logos/html-css-js.png" width="100%")
+      img.next(src="pictures/logos/html-css-js.png" width="80%" style="margin-left: 10%")
       p.next.center
         span.bold НЕТ
         br
@@ -600,15 +600,15 @@ html(lang='ru')
               br
               span.next / 30
     +slide({header: "", classes: "label-header"})
-      img.logo-img.winner(src="pictures/logos/vs-code.png", width="180px")
+      img.logo-img.winner2(src="pictures/logos/vs-code.png", width="180px")
       +cover('pictures/change-bg.jpg')      
     +slide({header: "Редакторы кода в браузере", shout: true, classes: "capture top-center label-header"})
       +cover('pictures/online.jpg')
     +slide({ classes: "label-header white"})
       +cover('pictures/online-options.jpg')
       img.next(src="pictures/logos/codepen.png", style="width: 200px; position: absolute; top: 50px; left: 250px")
-      img.next(src="pictures/logos/jsfiddle.png", style="width: 200px; position: absolute; top: 200px; left: 400px")
-      img.next(src="pictures/logos/jsbin.png", style="width: 200px; position: absolute; top: 400px; left: 550px")
+      img.next(src="pictures/logos/jsfiddle.png", style="width: 200px; position: absolute; top: 175px; left: 425px")
+      img.next(src="pictures/logos/jsbin.png", style="width: 200px; position: absolute; top: 350px; left: 575px")
     +slide({header: "", classes: "label-header white"})
       a.bottom(href="https://stackoverflow.com/a/11828573") Как выйти из Vim
       +cover('pictures/vim-bg.jpg')
